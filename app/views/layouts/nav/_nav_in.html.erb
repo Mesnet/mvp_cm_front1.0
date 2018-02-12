@@ -1,0 +1,33 @@
+<div class="navbar-fixed">
+  <ul id="dropdown1" class="dropdown-content">
+    <!-- Problem of width unsolved -->
+    <li><a href="#!">two ziuzyhiu zkzh izu j</a></li>
+    <li class="divider"></li>
+    <li><a href="/users/sign_out" data-method="delete" data-confirm="Voulez vous sortir de CMessenger ?" data-commit="Deconnecter" data-cancel="Annuler" class="nav_list_user_links" style:'display: inline-flex'><i class="fa fa-sign-out fa_icons"></i>Deconnection</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper">
+   <a href="#" class="brand-logo hide-on-med-and-down">
+      <%= image_tag "log.png", class: "nb_logo_img"%>
+    </a>
+    <ul class="brand-logo main_tab center ">
+      <li class='active tooltipped' data-tooltip="Général"><a href="/"><i class="material-icons" >home</i></a></li>
+      <li class='tooltipped' data-tooltip="Tâches"><a href="#"><i class="material-icons">list</i></a></li>
+      <li class='tooltipped' data-tooltip="Evènements"><a href="#"><i class="material-icons">date_range</i></a></li>
+      <li class='tooltipped' data-tooltip="Fichiers"><a href="#"><i class="material-icons">cloud_queue</i></a></li>
+    </ul>
+    <ul class="right hide-on-med-and-down" style='margin-right: 70px; '>
+      <li><a href="#"><i class="material-icons">notifications_none</i></a></li>
+      <li ><a href="#"><i class="material-icons">mail_outline</i></a></li>
+    </ul>
+    <a class="dropdown-button right" href="#!" data-activates="dropdown1"  data-beloworigin="true"><i class="material-icons" style="margin-right: 10px; font-size: 30px;">reorder</i></a>
+    </div>
+  </nav>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('.dropdown-button').dropdown();
+     $('.tooltipped').tooltip();
+  });
+</script>

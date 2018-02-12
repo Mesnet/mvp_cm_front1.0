@@ -1,0 +1,11 @@
+Rails.application.routes.draw do
+  devise_for :users
+  # ROOT
+  authenticated :user do
+    root to: "pages#home", as: :authenticated_root
+  end
+  unauthenticated do
+    root 'pages#landing'
+  end
+
+end
