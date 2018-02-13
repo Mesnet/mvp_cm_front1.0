@@ -11,9 +11,13 @@
   <body>
     <%- if user_signed_in? %>
       <%= render 'layouts/nav/nav_in' %>
+      <%= render 'layouts/nav/sidenav' if @nav %>
     <% else %>
       <%= render 'layouts/nav/nav_out' %>
     <% end %>
-    <%= yield %>
+    <div class="body_box">
+      <%= yield %>
+    </div>
+    
   </body>
 </html>

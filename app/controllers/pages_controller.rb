@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def home
+    @nav = true
   end
 end
