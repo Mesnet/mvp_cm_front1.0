@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'posts/post3'%>
+<%= render 'posts/post1'%>
+<%= render 'posts/post'%>
+<script>
+  $(document).ready(function () {
+    // Action btn display
+    $( ".card" ).hover(
+      function() {
+        $( this ).find(".post_action").toggle();
+      }, function() {
+        $( this ).find(".post_action").toggle();
+      }
+    );
+    // Comment display
+    $('.comment_btn').on('click', function (event) {
+      var pa = $( event.target ).closest(".post_action")
+      pa.nextAll(".post_comment").slideToggle();
+      pa.nextAll(".post_comments").slideDown();
+      pa.nextAll(".post_edit").slideUp();
+    });
+    $('.edit_btn').on('click', function (event) {
+      var pa = $( event.target ).closest(".post_action")
+      pa.nextAll(".post_edit").slideToggle();
+      pa.nextAll(".post_comment, .post_comments").slideUp();
+    });
+  });
+</script>

@@ -7,15 +7,12 @@
       <a id="close_sn_btn" href="#!" class="right"><i class="material-icons" style="margin-top: 3px; color: #5E5E5E;">close</i></a>
       <div class='inline-area'>
         <div class="profil_round">
-          JR
+          AR
         </div>
-        <div class='profil_name'>Jean Rennoir</div>
+        <div class='profil_name'>Auguste Renoir</div>
       </div>
       <br>
-      <div class='inline-area' style='width: 100%;'>
-        <a class='dropdown-button btn' href='#' data-activates='dropdown_mail' style='width: 100%;'><div class='profil_mail'>Tous</div></a>
-        <a class='btn-flat right' style='width: 45px; padding: 0; margin-left: 10px;'><i class="material-icons" style='font-size: 20px; color: #5E5E5E;'>settings</i></a>
-        </div>
+      <a class='dropdown-button btn' href='#' data-activates='dropdown_mail' style='width: 100%;'><div class='profil_mail'>Tous</div></a>
       <!-- Dropdown Structure -->
       <ul id='dropdown_mail' class='dropdown-content'>
         <li><a href="#!">Toutes les adresses</a></li>
@@ -27,8 +24,6 @@
   </div>
   <div class="sn_body">
       <%= render 'groups/group1' %>
-      <br>
-      <%= render 'groups/group2' %>
       <br>
       <%= render 'groups/group3' %>
   </div>
@@ -67,10 +62,12 @@
     <%= render 'groups/group' %>
     <%= render 'groups/add' %>
     <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
   </div>
 </div>
 <script>  
   $(document).ready(function () {
+    $('.tooltip').tooltip({html: true});
     event.preventDefault();
     // Check if sn is open
     if (sessionStorage.getItem('sn_opened')){
@@ -100,7 +97,7 @@
       event.preventDefault();
       sessionStorage.removeItem('sn_opened', false)
       $('.sn').removeClass('open');
-      $('.body_box').css("margin-left", "50px");
+      $('.body_box').css("margin-left", "60px");
       $('.sn_elm_close').show();
       $('.sn_elm_open').hide();
     });

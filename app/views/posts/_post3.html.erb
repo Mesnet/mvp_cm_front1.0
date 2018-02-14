@@ -1,0 +1,38 @@
+<div class="card">
+  <!-- Header -->
+  <div class="card-header">
+    <a class="user_link" href="#">Georges Braque</a>
+    &nbsp
+    a validé une tâche
+  </div>
+  <!-- Content -->
+  <div class="card-content" style="padding: 10px;">
+    <%= render 'tasks/task2'%>
+  </div>
+  <!-- Action area -->
+  <div class="card-action post_action undisplay" style="padding: 0 10px 0 10px;">
+    <div class="row" style="margin: 5px; padding: 5px;">
+      <div class="col s6">
+        <div class="post_btn">
+          <i class="material-icons" style="color: #5E5E5E; font-size: 20px;">thumb_up</i>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="post_btn comment_btn">
+          <i class="material-icons" style="color: #5E5E5E; font-size: 20px;">sms</i>
+        </div>
+      </div>
+    </div>   
+  </div>
+  <!-- Comments input -->
+  <div class="card-action post_comment undisplay" style="padding: 0 10px 0 10px;">
+    <div class="input-field">
+      <div class="input-field" style="margin-right: 60px;">
+        <input placeholder="Commentez" id="first_name" type="text" class="validate" >
+      </div>
+      <button class="btn right waves-effect waves-light" style='width: 40px; padding-right: 10px; margin-top: -55px; margin-left: 5px;'>
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+</div>
