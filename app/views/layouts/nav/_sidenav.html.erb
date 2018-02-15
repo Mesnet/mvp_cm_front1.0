@@ -5,40 +5,46 @@
     </div >
     <div class="sn_elm_open">
       <a id="close_sn_btn" href="#!" class="right"><i class="material-icons" style="margin-top: 3px; color: #5E5E5E;">close</i></a>
-      <div class='inline-area'>
-        <div class="profil_round">
-          AR
+      <div class="sn_profil menu_mail">
+        <div class='inline-area '>
+          <div class="profil_round">
+            AR
+          </div>
+          <div class='profil_name'>Auguste Renoir</div>
         </div>
-        <div class='profil_name'>Auguste Renoir</div>
+        <br>
+        <a class='dropdown-button btn' href='#' data-activates='dropdown_mail' style='width: 100%;'><div class='profil_mail'>Tous</div></a>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown_mail' class='dropdown-content'>
+          <li><a href="#!">Toutes les adresses</a></li>
+          <li><a href="#!">adresse1@google.com</a></li>
+          <li><a href="#!">adresse1@google.com</a></li>
+          <li><a href="#!"><i class="material-icons" style='font-size: 20px;'>add</i>Ajouter</a></li>
+        </ul>
       </div>
-      <br>
-      <a class='dropdown-button btn' href='#' data-activates='dropdown_mail' style='width: 100%;'><div class='profil_mail'>Tous</div></a>
-      <!-- Dropdown Structure -->
-      <ul id='dropdown_mail' class='dropdown-content'>
-        <li><a href="#!">Toutes les adresses</a></li>
-        <li><a href="#!">adresse1@google.com</a></li>
-        <li><a href="#!">adresse1@google.com</a></li>
-        <li><a href="#!"><i class="material-icons" style='font-size: 20px;'>add</i>Ajouter</a></li>
-      </ul>
     </div>
   </div>
-  <div class="sn_body">
-      <%= render 'groups/group1' %>
-      <br>
-      <%= render 'groups/group3' %>
+  <div class="sn_body menu_mail">
+    <%= render 'groups/group1' %>
+    <br>
+    <%= render 'groups/group3' %>
   </div>
-  <div class="sn_body">
-   
-      <%= render 'groups/group4' %>
-      <br>
-      <%= render 'groups/group5' %>
-      <br>
-      <%= render 'groups/group6' %>
-    
+  <div class="sn_body menu_mail">
+    <%= render 'groups/group4' %>
+    <br>
+    <%= render 'groups/group5' %>
+    <br>
+    <%= render 'groups/group6' %>
   </div>
+  <!-- Unless Mail menu -->
+  <div class="sn_body no_menu_mail">
+    <%= render 'groups/group1' %>
+    <%= render 'groups/group7' %>
+  </div>
+  <!-- /Unless Mail menu -->
   <div class="sn_body">
     <div class="sn_elm_open" style="text-align: center;">
-      <div class='group_title'>
+      <div class='group_title menu_mail'>
         <div class='group_title_icon'>
           <i class="material-icons" style='font-size: 20px; padding-top: 3px;'>group</i>
         </div>
@@ -61,8 +67,11 @@
     <%= render 'groups/group' %>
     <%= render 'groups/group' %>
     <%= render 'groups/add' %>
-    <%= render 'groups/group' %>
-    <%= render 'groups/group' %>
+    <br>
+    <br>
+    <br>
+    <br>
+
   </div>
 </div>
 <script>  
@@ -101,5 +110,14 @@
       $('.sn_elm_close').show();
       $('.sn_elm_open').hide();
     });
+    // Menu Mail Display
+    var pathname = window.location.pathname;
+    if(pathname == '/'){
+      $('.menu_mail').show();
+      $('.no_menu_mail').hide();
+    } else{
+      $('.menu_mail').hide();
+      $('.no_menu_mail').show();
+    }
   });
 </script>
