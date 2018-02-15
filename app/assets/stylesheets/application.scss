@@ -169,14 +169,11 @@ TRY TO STYLE FOR NAV TOOL
   float:left;
   height:100vh;
   background: #f8f8f8;
-  display: inline-block;
-  white-space: nowrap;
   width: 60px;
   transition: width 1s;
   margin-top: 64px;
   margin-right: 60px;
   border-right: solid #e7e7e7 1px;
-  overflow: hidden;
   font-size: 17px;
   overflow: scroll;
   .material-icons{
@@ -281,10 +278,11 @@ TRY TO STYLE FOR NAV TOOL
 .card-header{
   padding: 10px;
   display: flex;
+  border-bottom: 1px solid #e9ebee;
 }
 
-.card-header{
-  border-bottom: 1px solid #e9ebee;
+.card_content_info{
+  padding: 10px !important;
 }
 
 .materialboxed{
@@ -305,7 +303,7 @@ TRY TO STYLE FOR NAV TOOL
 }
 
 /********************************************************************/
-/*** TASK ***/
+/*** TASK (element) ***/
 
 .task{
   width: 100%;
@@ -329,3 +327,39 @@ TRY TO STYLE FOR NAV TOOL
   margin: 5px;
 }
 
+/********************************************************************/
+/*** TASK (sn) ***/
+
+.task_sn{
+  position: fixed;
+  right: 0;
+  top: 0;
+  height:100vh;
+  background: #f8f8f8;
+  width: 250px;
+  margin-top: 64px;
+  margin-left: 250px;
+  color: #5E5E5E !important;
+}
+
+.task_sn_header{
+  font-size: 20px;  
+  display: inline-flex;
+  padding: 10px;
+  padding-bottom: 0;
+
+}
+
+.task_sn_footer{
+  display: flex;
+}
+
+.close_sn_task_btn{
+   &:hover {
+    cursor: pointer;
+  }
+}
+
+.task_sn_body{
+  overflow-y: scroll;
+}
