@@ -12,9 +12,9 @@
     </a>
     <ul class="brand-logo main_tab center ">
       <li id="main_link1" class='tooltipped' data-tooltip="Général"><a href="/"><i class="material-icons" >home</i></a></li>
-      <li id="main_link2" data-tooltip="Tâches"><a href="/taskboard"><i class="material-icons">list</i></a></li>
-      <li id="main_link3" data-tooltip="Evènements"><a href="/calendar"><i class="material-icons">date_range</i></a></li>
-      <li id="main_link4" data-tooltip="Fichiers"><a href="/cloud"><i class="material-icons">filter_drama</i></a></li>
+      <li id="main_link2" class='tooltipped' data-tooltip="Tâches"><a href="/taskboard"><i class="material-icons">list</i></a></li>
+      <li id="main_link3" class='tooltipped' data-tooltip="Evènements"><a href="/calendar"><i class="material-icons">date_range</i></a></li>
+      <li id="main_link4" class='tooltipped' data-tooltip="Fichiers"><a href="/cloud"><i class="material-icons">filter_drama</i></a></li>
     </ul>
     <ul class="right hide-on-med-and-down" style='margin-right: 70px; '>
       <li><a href="#"><i class="material-icons">notifications_none</i></a></li>
@@ -24,11 +24,11 @@
     </div>
   </nav>
 </div>
-
 <script>
   $(document).ready(function () {
     $('.dropdown-button').dropdown();
     $('.tooltipped').tooltip();
+    // Active tab
     var pathname = window.location.pathname;
     if(pathname == '/'){
       $('#main_link1').addClass('active')
@@ -41,6 +41,4 @@
     }
 
   });
-  // Active tab
 </script>
-<div class="fixed-action-btn btn_new_message"><a class="btn-floating btn-large red" href="#" target="_blank"><i class="large material-icons">chat</i></a></div>

@@ -1,1 +1,83 @@
-taskboard
+<div class="tb_header z-depth-4">
+  <div class="tb_form_line ">
+    <div class="input-field left oneline" style="margin: 0; width: 100%;">
+      <input placeholder="Nouvelle tâche" type="text" class="validate">
+      <div class="btn_form_task oneline">
+        <a class="waves-effect waves-light btn cyan" id="tb_show_form" style='margin-top: 8px; margin-left: 5px;'><i class="material-icons">add_circle_outline</i></a>
+        <a class="waves-effect waves-light btn" style='margin-top: 8px; margin-left: 5px;'>OK</a>
+      </div>
+    </div>
+  </div>
+  <div class="tb_form_line oneline tb_form2">
+    <div class="input-field" style="margin: 0;">
+      <input placeholder="Deadline" type="text" class="datepicker" style="margin: 0 5px; width: 150px">
+    </div>
+    <div class="input-field" style="margin: 0; width: 300px;">
+      <select multiple class="icons">
+        <option value="" disabled selected>Participants</option>
+        <option value="" data-icon="http://renoir.chez.com/images/renoir_photog.jpg" class="circle">Auguste Renoir</option>
+        <option value="" data-icon="https://uploads4.wikiart.org/00115/images/pablo-picasso/iuyqtex0.jpeg!Portrait.jpeg" class="circle">Pablo Picasso</option>
+        <option value="" data-icon="http://terresdefemmes.blogs.com/.a/6a00d8345167db69e201b7c6eae662970b-800wi" class="circle">Georges Braques</option>
+      </select>
+    </div>
+    <p style="margin-left: 20px;">
+      <input type="checkbox" id="test5" />
+      <label for="test5">Important</label>
+    </p>
+
+    <a class="waves-effect waves-light btn" style='margin-top: 8px; margin-left: 20px;'>OK</a>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    // Show more (form)
+    $('.tb_form2').hide();
+    $('#tb_show_form').click(function() {
+      $('.tb_form2').slideDown();
+      $('.btn_form_task').hide();
+    });
+    // JS for the form
+    $('select').material_select();
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: true // Close upon selecting a date,
+  });
+  });
+</script>
+<br>
+<div class="tb_body">
+  <ul class="collection with-header" style='margin: 0;'>
+    <!-- Element -->
+    <li class="collection-item task_tb" style="padding: 10px;">
+      <a href="#" class="material-icons" style="color: #00ac9b; margin-right: 5px; font-size: 30px;">crop_square</a>
+      <div class="tb_task_name" style="padding-top: 5px; width: 100%;">
+        Alvin
+      </div>
+      <div class="tb_task_date" style="width: 60px; padding-top: 7px;">
+        25 dec
+      </div>
+      <a href="#" class="material-icons tooltip" data-tooltip="12 dec à 18:30" data-position="top" data-delay="50" style="color: #5E5E5E; margin-right: 5px; padding-top: 5px;">timer</a>
+      <a href="#" class="material-icons tooltip" data-tooltip="Pablo Picasso" data-position="right" data-delay="50" style="color: #5E5E5E; margin-right: 5px; padding-top: 5px;">person</a>
+    </li>
+    <!-- /Element -->
+    <!-- Copies -->
+    <%= render 'tasks/tb_copies'%>
+    <!-- /Copies -->
+  </ul>
+</div>
+<%= render 'tasks/sn/sn' %>
+<script>
+  $(document).ready(function () {
+$('.task_tb').click(function() {
+      $( event.target ).closest(".tb_body").next('.task_sn').animate({width: 'show'});
+      $('.body_box').css("margin-right", "250px");
+    });
+});
+</script>
+<div class='tb_footer'>
+  <a class="waves-effect waves-light btn">Voir les tâches terminée</a>
+</div>

@@ -12,15 +12,13 @@
     <%- if user_signed_in? %>
       <%= render 'layouts/nav/nav_in' %>
       <%= render 'layouts/nav/sidenav' if @nav1 %>
+      <%= render 'layouts/nav/new' if @nav1 %>
       <%= render 'layouts/nav/sidenav2' if @nav2 %>
     <% else %>
       <%= render 'layouts/nav/nav_out' %>
     <% end %>
     <div class="body_box">
       <%= yield %>
-
     </div>
-
-    
   </body>
 </html>
