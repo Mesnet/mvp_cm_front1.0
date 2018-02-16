@@ -1,0 +1,91 @@
+<div class="sn">
+  <div class="sn_header">
+    <div class="sn_elm_close">
+       <a id="open_sn_btn" href="#!"><i class="material-icons"  style="margin-top: 10px; color: #5E5E5E; font-size: 30px;">keyboard_arrow_right</i></a>
+    </div >
+    <div class="sn_elm_open">
+      <a id="close_sn_btn" href="#!" class="right"><i class="material-icons" style="margin-top: 3px; color: #5E5E5E; font-size: 30px;">close</i></a>
+      <div class="sn_profil">
+        <div class='inline-area'>
+          <div class="profil_round">
+            AR
+          </div>
+          <div class='profil_name'>Auguste Renoir</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sn_body">
+    <%= render 'groups/group1' %>
+    <br>
+    <%= render 'groups/group7' %>
+  </div>
+  <div class="sn_body" style="max-height: 500px; overflow: scroll;">
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+    <%= render 'groups/group' %>
+  </div>
+  <!-- Btn New Group -->
+  <div class="sn_elm_open">
+    <a class="waves-effect waves-light btn" style='width: 95%; margin: 5px 0 5px 5px;'><i class="material-icons left">create_new_folder</i>Nouveau</a>
+  </div>
+  <div class="sn_elm_close">
+    <a class="waves-effect waves-light btn" style='margin: 5px 0 5px 2px; width: 40px; padding-left: 10px;'><i class="material-icons left">create_new_folder</i></a>
+  </div>
+  <!-- /Btn New Group -->
+</div>
+<script>  
+  $(document).ready(function () {
+    $('.tooltip').tooltip({html: true});
+    event.preventDefault();
+    // Check if sn is open
+    if (sessionStorage.getItem('sn_opened')){
+      $('.sn').addClass('open');
+      $('.sn, .body_box').css({'transition' : 'margin 0s'})
+    }
+    // & add the params
+    if($(".sn").hasClass("open")) {
+      $('.sn_elm_close').hide();
+      $('.sn_elm_open').show();
+      $('.body_box').css("margin-left", "250px");
+    }else{
+      $('.sn_elm_close').show();
+      $('.sn_elm_open').hide();
+    }
+    // Open sn
+    $('#open_sn_btn').on('click', function (event) {
+      event.preventDefault();
+      sessionStorage.setItem('sn_opened', true)
+      $('.sn').addClass('open');
+      $('.body_box').css("margin-left", "250px");
+      $('.sn_elm_close').hide();
+      $('.sn_elm_open').show();
+    });
+    // Close sn
+    $('#close_sn_btn').on('click', function (event) {
+      event.preventDefault();
+      sessionStorage.removeItem('sn_opened', false)
+      $('.sn').removeClass('open');
+      $('.body_box').css("margin-left", "60px");
+      $('.sn_elm_close').show();
+      $('.sn_elm_open').hide();
+    });
+  });
+</script>

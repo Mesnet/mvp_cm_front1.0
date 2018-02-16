@@ -1,11 +1,11 @@
 <div class="sn">
   <div class="sn_header">
     <div class="sn_elm_close">
-       <a id="open_sn_btn" href="#!"><i class="material-icons"  style="margin-top: 10px; color: #5E5E5E;">keyboard_arrow_right</i></a>
+       <a id="open_sn_btn" href="#!"><i class="material-icons"  style="margin-top: 10px; color: #5E5E5E; font-size: 30px;">keyboard_arrow_right</i></a>
     </div >
     <div class="sn_elm_open">
-      <a id="close_sn_btn" href="#!" class="right"><i class="material-icons" style="margin-top: 3px; color: #5E5E5E;">close</i></a>
-      <div class="sn_profil menu_mail">
+      <a id="close_sn_btn" href="#!" class="right"><i class="material-icons" style="margin-top: 3px; color: #5E5E5E; font-size: 30px;">close</i></a>
+      <div class="sn_profil">
         <div class='inline-area '>
           <div class="profil_round">
             AR
@@ -24,55 +24,62 @@
       </div>
     </div>
   </div>
-  <div class="sn_body menu_mail">
+  <div class="sn_body">
     <%= render 'groups/group1' %>
+    <br>
+    <%= render 'groups/group2' %>
     <br>
     <%= render 'groups/group3' %>
   </div>
-  <div class="sn_body menu_mail">
-    <%= render 'groups/group4' %>
-    <br>
-    <%= render 'groups/group5' %>
-    <br>
-    <%= render 'groups/group6' %>
-  </div>
-  <!-- Unless Mail menu -->
-  <div class="sn_body no_menu_mail">
-    <%= render 'groups/group1' %>
-    <%= render 'groups/group7' %>
-  </div>
-  <!-- /Unless Mail menu -->
-  <div class="sn_body">
-    <div class="sn_elm_open" style="text-align: center;">
-      <div class='group_title menu_mail'>
-        <div class='group_title_icon'>
-          <i class="material-icons" style='font-size: 20px; padding-top: 3px;'>group</i>
+  <ul class="collapsible" data-collapsible="accordion" >
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">archive</i>
+        <div class="sn_elm_open">
+          Autres
         </div>
-        <div class='group_title_name'>
+      </div>
+      <div class="collapsible-body border_right">
+        <ul class="collection">
+          <div class="sn_body">
+            <%= render 'groups/group4' %>
+            <br>
+            <%= render 'groups/group5' %>
+            <br>
+            <%= render 'groups/group6' %>
+          </div>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">group</i>
+        <div class="sn_elm_open">
           Groupes
         </div>
       </div>
-    </div>
-    <div class="sn_elm_close">
-      <div class='group_title'>
-        <div class='group_title_icon'>
-          <i class="material-icons" style='font-size: 20px; padding-top: 3px;'>group</i>
+      <div class="collapsible-body border_right">
+        <ul class="collection" style='max-height: 300px; overflow: scroll;'>
+          <%= render 'groups/group' %>
+          <%= render 'groups/group' %>
+          <%= render 'groups/group' %>
+          <%= render 'groups/group' %>
+          <%= render 'groups/group' %>
+          <%= render 'groups/group' %>
+          <%= render 'groups/group' %>
+          <%= render 'groups/group' %>
+        </ul>
+        <!-- Btn New Group -->
+        <div class="sn_elm_open">
+          <a class="waves-effect waves-light btn" style='width: 95%; margin: 5px 0 5px 5px;'><i class="material-icons left">create_new_folder</i>Nouveau</a>
         </div>
+        <div class="sn_elm_close">
+          <a class="waves-effect waves-light btn" style='margin: 5px 0 5px 2px; width: 40px; padding-left: 10px;'><i class="material-icons left">create_new_folder</i></a>
+        </div>
+        <!-- /Btn New Group -->
       </div>
-    </div>
-    <%= render 'groups/group' %>
-    <%= render 'groups/group' %>
-    <%= render 'groups/group' %>
-    <%= render 'groups/group' %>
-    <%= render 'groups/group' %>
-    <%= render 'groups/group' %>
-    <%= render 'groups/add' %>
-    <br>
-    <br>
-    <br>
-    <br>
-
-  </div>
+    </li>
+  </ul>
 </div>
 <script>  
   $(document).ready(function () {

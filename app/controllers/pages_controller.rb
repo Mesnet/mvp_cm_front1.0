@@ -3,19 +3,19 @@ class PagesController < ApplicationController
   end
 
   def home
-    @nav = true
+    @nav1 = true
   end
 
   def taskboard
-    @nav = true
+    @nav2 = true
   end
 
   def calendar
-    @nav = true
+    @nav2 = true
   end
   
   def cloud
-    @nav = true
+    @nav2 = true
   end
 
 end
